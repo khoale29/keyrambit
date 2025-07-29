@@ -17,7 +17,8 @@ export default function Sda() {
         {/* --- SECTION ORDER UPDATED --- */}
 
         {/* 1. Social Media Section (now appears on the left) */}
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2"
+          aria-label="Ủng hộ Keyrambit Việt Nam tại đây">
           <span className="text-xs text-gray-600 dark:text-gray-400">
             Mua hàng
           </span>
@@ -31,7 +32,8 @@ export default function Sda() {
           </a>
         </div>
         
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-2"
+        aria-label="Theo dõi thông tin về Keyrambitvn tại dây">
           <span className="text-xs text-gray-600 dark:text-gray-400">
             Theo dõi chúng tôi
           </span>

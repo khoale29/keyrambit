@@ -1,4 +1,3 @@
-// app/layout.js
 import "./globals.css";
 import { Lavishly_Yours, Montserrat } from "next/font/google";
 
@@ -7,8 +6,8 @@ import Script from "next/script";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500"], // Choose the weights you use
-  variable: "--font-montserrat", // Optional: to use in Tailwind
+  weight: ["400", "500"],
+  variable: "--font-montserrat",
 });
 const lavishlyYours = Lavishly_Yours({
   weight: "400",
@@ -18,22 +17,25 @@ const lavishlyYours = Lavishly_Yours({
 });
 
 export const metadata = {
-  title: "Keyrambitvn",
+  title: "Keyrambitvn | Móc Khóa Độc Đáo – Quà Tặng Quốc Khánh 2/9",
   description:
-    "Trang web chính thức của KeyrambitVN - Chúng tôi làm đồ chơi, làm keyrambit.",
+    "Khám phá bộ sưu tập móc khóa độc đáo tại Keyrambitvn. Ưu đãi đặc biệt nhân dịp Quốc Khánh 2/9 – quà tặng móc khóa ý nghĩa cho bạn bè và người thân.",
+  keywords:
+    "móc khóa Keyrambitvn, móc khóa 2/9, móc khóa độc đáo, quà tặng Quốc Khánh, móc khóa Việt Nam",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-icon.png",
   },
   openGraph: {
-    title: "Keyrambitvn – Trang web chính thức của Keyrambitvn",
-    description: "Bộ sưu tập mới nhất của Keyrambitvn.",
+    title: "Keyrambitvn | Móc Khóa Độc Đáo – Quà Tặng Quốc Khánh 2/9",
+    description:
+      "Khám phá bộ sưu tập móc khóa độc đáo của Keyrambitvn, ưu đãi nhân ngày Quốc Khánh 2/9.",
     url: "https://keyrambitvn.com",
     siteName: "Keyrambitvn",
     images: [
       {
         url: "https://keyrambitvn.com/Logo_header.webp",
-        alt: "Keyrambitvn Logo",
+        alt: "Keyrambitvn móc khóa độc đáo cho Quốc Khánh 2/9",
       },
     ],
     locale: "vi_VN",
@@ -48,16 +50,39 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
+      lang="vi"
       className={`${lavishlyYours.variable} ${montserrat.variable}`}
     >
       <Head>
+        {/* Title & Meta cơ bản */}
+        <title>
+          Keyrambitvn | Móc Khóa Độc Đáo – Quà Tặng Quốc Khánh 2/9
+        </title>
+        <meta
+          name="description"
+          content="Khám phá bộ sưu tập móc khóa độc đáo tại Keyrambitvn. Ưu đãi đặc biệt dịp Quốc Khánh 2/9 – quà tặng móc khóa ý nghĩa cho bạn bè và người thân."
+        />
+        <meta
+          name="keywords"
+          content="móc khóa Keyrambitvn, móc khóa ngày lễ, móc khóa độc đáo, quà tặng 2/9, móc khóa Quốc Khánh"
+        />
+        <meta property="og:title" content="Keyrambitvn | Móc Khóa Độc Đáo – Quà Tặng Quốc Khánh 2/9" />
+        <meta
+          property="og:description"
+          content="Khám phá bộ sưu tập móc khóa độc đáo của Keyrambitvn, ưu đãi nhân ngày Quốc Khánh 2/9."
+        />
+        <meta property="og:image" content="https://keyrambitvn.com/Logo_header.webp" />
+        <meta property="og:url" content="https://keyrambitvn.com" />
+        <meta property="og:type" content="website" />
+        {/* Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600&display=swap"
           rel="stylesheet"
         />
       </Head>
       <body className="antialiased">{children}</body>
+
+      {/* JSON-LD Structured Data cho Store & Event */}
       <Script
         id="jsonld-store"
         type="application/ld+json"
@@ -70,7 +95,9 @@ export default function RootLayout({ children }) {
             url: "https://keyrambitvn.com",
             logo: "https://keyrambitvn.com/logo.png",
             description:
-              "Keyrambitvn là cửa hàng chuyên bán móc khóa độc đáo dành cho giới trẻ, với thiết kế lấy cảm hứng từ game, anime và văn hóa pop.",
+              "Keyrambitvn – cửa hàng móc khóa độc đáo dành cho giới trẻ, thiết kế lấy cảm hứng từ game, anime và văn hoá pop. Ưu đãi đặc biệt dịp Quốc Khánh 2/9.",
+            keywords:
+              "móc khóa Keyrambitvn, móc khóa độc đáo, quà tặng Quốc Khánh, móc khóa 2/9, keyrambitvn, keyrambit, keyrambit Việt Nam",
             address: {
               "@type": "PostalAddress",
               addressCountry: "VN",
@@ -80,6 +107,40 @@ export default function RootLayout({ children }) {
               "https://www.tiktok.com/@keyrambitvn.company?lang=en",
               "https://www.instagram.com/keyrambitvnhouse/",
             ],
+            event: {
+              "@type": "SaleEvent",
+              name: "Các sản phẩm Keyrambitvn tại dịp Quốc Khánh 2/9",
+              description:
+                "Móc khóa độc đáo nhân ngày Quốc Khánh 2/9.",
+              startDate: "2024-08-25",
+              endDate: "2024-09-05",
+              url: "https://keyrambitvn.com",
+              location: {
+                "@type": "Place",
+                name: "Cửa hàng Keyrambitvn",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "391/21 Sư Vạn Hạnh, Phường 12",
+                  addressLocality: "Quận 10",
+                  addressRegion: "Hồ Chí Minh",
+                  addressCountry: "VN",
+                },
+              },
+              organizer: {
+                "@type": "Organization",
+                name: "Keyrambitvn",
+                url: "https://keyrambitvn.com",
+              },
+              eventStatus: "https://schema.org/EventScheduled",
+              image: "https://keyrambitvn.com/images/independence-sale.jpg",
+              offers: {
+                "@type": "Offer",
+                url: "https://keyrambitvn.com",
+                priceCurrency: "VND",
+                availability: "https://schema.org/InStock",
+                validFrom: "2024-08-25",
+              },
+            },
           }),
         }}
       />

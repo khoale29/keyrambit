@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import MoreInfoModal from "./testMoreInfoModal";
+import MoreInfoModal from "./MoreInfoModal";
 // import Image from "next/image";
 // import Box1 from "@/assets/box_1.png";
 // import Box2 from "@/assets/box_2.png";

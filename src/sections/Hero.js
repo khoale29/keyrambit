@@ -6,7 +6,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { Header } from "./Header";
-import MoreInfoModal from "@/components/testMoreInfoModal";
+import MoreInfoModal from "@/components/MoreInfoModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 const total = 4;
@@ -17,19 +17,19 @@ export const Hero = () => {
   const touchEndX = useRef(0);
 
   useEffect(() => {
-  const handleKeyDown = (e) => {
-    if (e.key === "ArrowLeft") {
-      prev();
-    } else if (e.key === "ArrowRight") {
-      next();
-    }
-  };
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft") {
+        prev();
+      } else if (e.key === "ArrowRight") {
+        next();
+      }
+    };
 
-  window.addEventListener("keydown", handleKeyDown);
-  return () => {
-    window.removeEventListener("keydown", handleKeyDown);
-  };
-}, []);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   const next = () => {
     setIndex((prev) => (prev + 1) % total);
@@ -78,9 +78,9 @@ export const Hero = () => {
     >
       <Header />
       <div className={`container mx-auto pt-14px text-center `}>
-        <p className="font-lavishly text-[36px] text-center text-[#212121] leading-[1.1] tracking-normal tracking-tighter ">
+        {/* <p className="font-lavishly text-[36px] text-center text-[#212121] leading-[1.0] tracking-normal tracking-tighter ">
           Bộ sưu tập
-        </p>
+        </p> */}
 
         <AnimatePresence mode="wait">
           <motion.p
@@ -141,7 +141,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto flex flex-col gap-6 items-center text-center lg:flex-row md:justify-center lg:gap-0 mt-[25px] md:mt-[45px] lg:mt-[35px]">
+        <div className="max-w-5xl mx-auto flex flex-col gap-6 items-center text-center lg:flex-row md:justify-center lg:gap-0 mt-[20px] md:mt-[45px] lg:mt-[35px]">
           {/* Bộ sưu tập */}
           <div className="w-[300px] flex flex-col items-center">
             <p className="font-montserrat font-normal text-[12px] uppercase opacity-70">
@@ -198,7 +198,7 @@ export const Hero = () => {
         </div>
 
         {/* Button */}
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6 pb-6 flex justify-center">
           <button
             onClick={() => setOpen(true)}
             className="px-6 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full font-montserrat font-medium text-[14px] transition cursor-pointer"

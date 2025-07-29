@@ -1,5 +1,7 @@
 "use client";
 
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { products } from "./Collections";
 import Image from "next/image";
@@ -85,7 +87,27 @@ export default function MoreInfoModal({ isOpen, onClose, index }) {
                     />
                   </div>
                 </div>
+              {/* TOP SECTION: Image next to Overview */}
+              <div className="grid grid-cols-1 gap-4 p-6 md:grid-cols-3 md:gap-6 md:px-12 items-start">
+  {/* Left Column: Product Image */}
+                <div className="md:col-span-1">
+                  <div className="mx-auto md:mx-8 w-full max-w-[200px] overflow-hidden rounded-xl shadow-lg">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      className="h-full w-full object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
 
+                {/* Right Column: TỔNG QUAN */}
+                <div className="md:col-span-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                    TỔNG QUAN
+                  </h3>
+                  <p className="mt-2 text-base leading-relaxed text-gray-600 dark:text-gray-300">
+                    {product.description}
                 {/* Right Column: TỔNG QUAN */}
                 <div className="md:col-span-2">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">
@@ -96,7 +118,14 @@ export default function MoreInfoModal({ isOpen, onClose, index }) {
                   </p>
                 </div>
               </div>
+                </div>
+              </div>
 
+              {/* BOTTOM SECTION: Details stacked vertically */}
+               <div className="grid grid-cols-1 gap-8 p-6 pt-4 md:grid-cols-3 md:gap-12 md:px-12">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                    Thương hiệu
               {/* BOTTOM SECTION: Details stacked vertically */}
                <div className="grid grid-cols-1 gap-8 p-6 pt-4 md:grid-cols-3 md:gap-12 md:px-12">
                 <div>
@@ -106,12 +135,20 @@ export default function MoreInfoModal({ isOpen, onClose, index }) {
                   <p className="text-base text-gray-800 dark:text-gray-200">
                     KEYRAMBITVN
                   </p>
+                  <p className="text-base text-gray-800 dark:text-gray-200">
+                    KEYRAMBITVN
+                  </p>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                     Mẫu gồm
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                    Mẫu gồm
                   </h3>
+                  <ul className="list-inside list-disc space-y-1 text-base text-gray-800 dark:text-gray-200">
+                    {product.maugom.map((item, i) => (
                   <ul className="list-inside list-disc space-y-1 text-base text-gray-800 dark:text-gray-200">
                     {product.maugom.map((item, i) => (
                       <li key={i}>{item}</li>
@@ -122,7 +159,14 @@ export default function MoreInfoModal({ isOpen, onClose, index }) {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                     Chất liệu
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                    Chất liệu
                   </h3>
+                  <p className="text-base text-gray-800 dark:text-gray-200">
+                    {product.chatlieu.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
                   <p className="text-base text-gray-800 dark:text-gray-200">
                     {product.chatlieu.map((item, i) => (
                       <li key={i}>{item}</li>
@@ -131,7 +175,13 @@ export default function MoreInfoModal({ isOpen, onClose, index }) {
                 </div>
               </div>
 
+
             </div>
+          </div>
+
+          {/* Sticky footer component */}
+          <Sda />
+        </motion.div>
           </div>
 
           {/* Sticky footer component */}

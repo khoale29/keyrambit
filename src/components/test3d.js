@@ -1,5 +1,6 @@
-// "use client";
-// import { useState, useEffect } from "react";
+"use client";
+import { useState, useEffect } from "react";
+import MoreInfoModal from "./testMoreInfoModal";
 // import Image from "next/image";
 // import Box1 from "@/assets/box_1.png";
 // import Box2 from "@/assets/box_2.png";
@@ -41,81 +42,19 @@
 //   },
 // ];
 
-// export default function Home1() {
-//   const [selectedIndex, setSelectedIndex] = useState(0);
+export default function Home1() {
+  const [open, setOpen] = useState(false);
 
-//   const handleSwipe = (direction) => {
-//     setSelectedIndex((prevIndex) => {
-//       if (direction === "left") {
-//         return (prevIndex + 1) % products.length;
-//       } else if (direction === "right") {
-//         return (prevIndex - 1 + products.length) % products.length;
-//       }
-//       return prevIndex;
-//     });
-//   };
+  return (
+    <>
+      <button onClick={() => setOpen(true)} className="mt-4">
+        More information
+      </button>
 
-//   useEffect(() => {
-//     const handleKeyDown = (event) => {
-//       if (event.key === "ArrowLeft") handleSwipe("right");
-//       if (event.key === "ArrowRight") handleSwipe("left");
-//     };
-//     window.addEventListener("keydown", handleKeyDown);
-//     return () => window.removeEventListener("keydown", handleKeyDown);
-//   }, []);
-
-//   const selectedProduct = products[selectedIndex];
-//   const surroundingProducts = [
-//     products[(selectedIndex - 1 + products.length) % products.length],
-//     products[(selectedIndex + 1) % products.length],
-//     products[(selectedIndex + 2) % products.length],
-//   ];
-
-//   return (
-//     <div className="flex flex-col items-center justify-center min-h-screen bg-green-500 p-4">
-//       <div className="text-center">
-//         <h1 className="text-4xl font-bold text-red-600">KEYRAMBITVN</h1>
-//         <p className="text-xl italic">Tên bộ sưu tập</p>
-//         <h2 className="text-3xl font-semibold text-white">
-//           {selectedProduct.name}
-//         </h2>
-//       </div>
-//       <div className="relative w-full max-w-md mt-5">
-//         <div className="flex justify-center">
-//           <Image
-//             src={selectedProduct.image}
-//             alt={selectedProduct.name}
-//             width={213}
-//             height={290}
-//             className="rounded-lg shadow-lg z-10"
-//           />
-//         </div>
-//         {surroundingProducts.map((product, index) => (
-//           <Image
-//             key={product.id}
-//             src={product.image}
-//             alt={product.name}
-//             width={164}
-//             height={224}
-//             className="absolute rounded-lg shadow-md opacity-70 transform -translate-y-1/2"
-//             style={{
-//               left: index === 0 ? "-18%" : index === 1 ? "80%" : "33%",
-//               top: index === 0 ? "50%" : index === 1 ? "50%" : "10%",
-//               filter: "blur(3px)", // Added blur effect
-//             }}
-//           />
-//         ))}
-//       </div>
-
-//       <button
-//         onClick={() => handleSwipe("left")}
-//         className="mt-4 px-4 py-2 bg-gray-200 rounded-full text-gray-800"
-//       >
-//         MORE INFORMATION &gt;
-//       </button>
-//     </div>
-//   );
-// }
+      <MoreInfoModal isOpen={open} onClose={() => setOpen(false)} />
+    </>
+  );
+}
 // "use client";
 // import { useState, useRef } from "react";
 // import Image from "next/image";

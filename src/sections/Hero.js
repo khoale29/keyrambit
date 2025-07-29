@@ -6,10 +6,12 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { Header } from "./Header";
+import MoreInfoModal from "@/components/testMoreInfoModal";
 import { motion, AnimatePresence } from "framer-motion";
 
 const total = 4;
 export const Hero = () => {
+  const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -95,6 +97,8 @@ export const Hero = () => {
                   ? () => prev()
                   : pos === "right"
                   ? () => next()
+                  : pos === "center"
+                  ? () => setOpen(true)
                   : undefined;
 
               return (
@@ -161,7 +165,7 @@ export const Hero = () => {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.15 }}
                 >
-                  {products[index].vatlieu}
+                  {products[index].chatlieu.join(" | ")}
                 </motion.p>
               </AnimatePresence>
             </div>
@@ -180,10 +184,18 @@ export const Hero = () => {
 
         {/* Button */}
         <div className="mt-6 flex justify-center">
-          <button className="px-6 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full font-montserrat font-medium text-[14px] transition cursor-pointer">
+          <button
+            onClick={() => setOpen(true)}
+            className="px-6 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full font-montserrat font-medium text-[14px] transition cursor-pointer"
+          >
             More Information &nbsp; →
           </button>
         </div>
+        <MoreInfoModal
+          isOpen={open}
+          onClose={() => setOpen(false)}
+          index={index}
+        />
       </div>
     </section>
   );

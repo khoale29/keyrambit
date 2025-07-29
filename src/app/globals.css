@@ -50,5 +50,5 @@
 body {
   background: var(--Background-ThepDoThanhDong);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  /* font-family: var(--font-geist-sans), Arial, sans-serif; */
 }

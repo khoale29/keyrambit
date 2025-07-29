@@ -1,10 +1,10 @@
 "use client";
-
-import { motion, AnimatePresence } from "framer-motion";
-import { products } from "./Collections";
-import Image from "next/image";
-import Footer from "./Footer";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
+import { products } from "./Collections";
+import { Footer } from "@/sections/Footer";
 
 export default function MoreInfoModal({ isOpen, onClose, index }) {
   useEffect(() => {
@@ -66,12 +66,12 @@ export default function MoreInfoModal({ isOpen, onClose, index }) {
             {/* Content wrapper */}
             <div className="relative z-10 mx-auto max-w-6xl text-left">
               {/* --- Header Section --- */}
-              <div className="flex items-start justify-between p-6 md:px-12">
+              <div className="flex items-start justify-between p-4 md:px-12">
                 <div>
                   <h2 className="font-lavishly text-5xl text-gray-800 dark:text-gray-200 md:text-6xl">
                     Bộ sưu tập
                   </h2>
-                  <p className="mt-1 text-xl font-bold text-gray-700 dark:text-gray-300 md:text-2xl">
+                  <p className="mt-4 text-xl font-bold text-gray-700 dark:text-gray-300 md:text-2xl">
                     {product.name}
                   </p>
                 </div>
@@ -85,7 +85,7 @@ export default function MoreInfoModal({ isOpen, onClose, index }) {
               </div>
 
               {/* TOP SECTION: Image next to Overview */}
-              <div className="grid grid-cols-1 gap-4 p-6 md:grid-cols-3 md:gap-6 md:px-12 items-start">
+              <div className="grid grid-cols-1 gap-4 px-6 md:grid-cols-3 md:gap-6 md:px-12 items-start">
                 {/* Left Column: Product Image */}
                 <div className="md:col-span-1">
                   <div className="mx-auto md:mx-8 w-full max-w-[200px] overflow-hidden rounded-xl shadow-lg">

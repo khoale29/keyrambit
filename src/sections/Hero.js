@@ -1,14 +1,13 @@
 "use client";
-
-import { products } from "@/components/Collections";
-
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import clsx from "clsx";
+import { motion, AnimatePresence } from "framer-motion";
+
+import { products } from "@/components/Collections";
 import { Header } from "./Header";
 import MoreInfoModal from "@/components/MoreInfoModal";
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
+
 const total = 4;
 export const Hero = () => {
   const [open, setOpen] = useState(false);
@@ -84,12 +83,12 @@ export const Hero = () => {
 
         <AnimatePresence mode="wait">
           <motion.p
-            key={products[index].name} // quan trọng để AnimatePresence hoạt động khi name thay đổi
+            key={products[index].name}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.15 }}
-            className={`font-semibold text-[38px] sm:text-[66px] bg-clip-text text-transparent ${products[index].bgcolor} leading-[1.5]`}
+            className={`font-semibold text-[35px] sm:text-[64px] bg-clip-text text-transparent ${products[index].bgcolor} leading-[1.0]`}
             style={{
               letterSpacing: "-4.4px",
             }}

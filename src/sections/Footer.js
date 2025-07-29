@@ -25,7 +25,7 @@ const socialLinks = [
   },
 ];
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <footer className="flex-shrink-0 bg-black/5 px-6 py-4 dark:bg-black/20 md:px-12">
       <div className="flex items-start justify-end gap-8">
@@ -80,4 +80,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};

@@ -19,9 +19,9 @@ const lavishlyYours = Lavishly_Yours({
 export const metadata = {
   title: "Keyrambitvn | Móc Khóa Độc Đáo – Quà Tặng Quốc Khánh 2/9",
   description:
-    "Khám phá bộ sưu tập móc khóa độc đáo tại Keyrambitvn. Ưu đãi đặc biệt nhân dịp Quốc Khánh 2/9 – quà tặng móc khóa ý nghĩa cho bạn bè và người thân.",
+    "Khám phá bộ sưu tập móc khóa độc đáo tại trang web chính thức của Keyrambitvn. Ưu đãi đặc biệt nhân dịp Quốc Khánh 2/9 – quà tặng móc khóa ý nghĩa cho bạn bè và người thân.",
   keywords:
-    "móc khóa Keyrambitvn, móc khóa 2/9, móc khóa độc đáo, quà tặng Quốc Khánh, móc khóa Việt Nam",
+    "móc khóa Keyrambitvn, móc khóa 2/9, móc khóa độc đáo, quà tặng Quốc Khánh, móc khóa Việt Nam, website keyrambitvn",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-icon.png",
@@ -29,12 +29,12 @@ export const metadata = {
   openGraph: {
     title: "Keyrambitvn | Móc Khóa Độc Đáo – Quà Tặng Quốc Khánh 2/9",
     description:
-      "Khám phá bộ sưu tập móc khóa độc đáo của Keyrambitvn, ưu đãi nhân ngày Quốc Khánh 2/9.",
+      "Khám phá bộ sưu tập móc khóa độc đáo tại trang web chính thức của Keyrambitvn, ưu đãi nhân ngày Quốc Khánh 2/9.",
     url: "https://keyrambitvn.com",
     siteName: "Keyrambitvn",
     images: [
       {
-        url: "https://keyrambitvn.com/Logo_header.webp",
+        url: "https://keyrambitvn.com/logo.webp",
         alt: "Keyrambitvn móc khóa độc đáo cho Quốc Khánh 2/9",
       },
     ],
